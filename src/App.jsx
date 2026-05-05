@@ -6,6 +6,7 @@ import Signup from './pages/Signup';
 import SeekerDashboard from './pages/dashboards/SeekerDashboard';
 import OwnerDashboard from './pages/dashboards/OwnerDashboard';
 import AdminDashboard from './pages/dashboards/AdminDashboard';
+import PropertyDetails from './pages/PropertyDetails';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
 // Simple PrivateRoute wrapper for mock auth
@@ -27,6 +28,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/property/:id" element={<PropertyDetails />} />
               
               {/* Protected Portals */}
               <Route path="/seeker/*" element={<PrivateRoute role="seeker"><SeekerDashboard /></PrivateRoute>} />
